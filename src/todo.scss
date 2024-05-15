@@ -24,10 +24,10 @@
     }
 
     button {
-        width: 70px;
-        background-color: white;
+        width: 60px;
+        background-color: white !important;
+        color: black !important;
         border: none;
-        border-left: 1px solid gray;
         cursor: pointer;
     }
 

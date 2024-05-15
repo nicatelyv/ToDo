@@ -1,12 +1,12 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './todo.scss';
-import { DarkModeContext } from "./context/DarkMode"
+// import { DarkModeContext } from "./context/DarkMode"
 
 function Todo() {
     const [todos, setTodos] = useState([]);
     const [inputValue, setInputValue] = useState("");
     const [filter, setFilter] = useState("all");
-    const { toggle, darkMode } = useContext(DarkModeContext);
+    // const { toggle, darkMode } = useContext(DarkModeContext);
 
     useEffect(() => {
         const storedTodos = JSON.parse(localStorage.getItem('todos'));
@@ -67,7 +67,7 @@ function Todo() {
         <div className='todoMain'>
             <div style={{ display: "flex", alignItems: "center", justifyContent: 'space-between' }}>
                 <h1>T O D O</h1>
-                {darkMode ? <i title='Light Mode' onClick={toggle} style={{ color: "#FFD43B", cursor: "pointer" }} class="fa-solid fa-sun"></i> : <i title='Dark Mode' onClick={toggle} style={{ cursor: "pointer" }} class="fa-solid fa-moon"></i>}
+                {/* {darkMode ? <i title='Light Mode' onClick={toggle} style={{ color: "#FFD43B", cursor: "pointer" }} class="fa-solid fa-sun"></i> : <i title='Dark Mode' onClick={toggle} style={{ cursor: "pointer" }} class="fa-solid fa-moon"></i>} */}
             </div>
             <form onSubmit={handleSubmit}>
                 <input
@@ -76,7 +76,7 @@ function Todo() {
                     value={inputValue}
                     onChange={handleChange}
                 />
-                <button type="submit">Add</button>
+                <button style={{ color: "black" }} type="submit">Add</button>
             </form>
             <div className='todos'>
                 {filteredTodos.map((todo) => (
